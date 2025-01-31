@@ -20,6 +20,9 @@ const init = async () => {
     });
 
     //routes 
+    const routes = require("./routes/todo.route");
+    server.route(routes);
+
     await server.start();
     console.log('Server running on %s', server.info.uri);
 };
