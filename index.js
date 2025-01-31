@@ -9,7 +9,13 @@ const init = async () => {
 
     const server = Hapi.server({
         port: 3000,
-        host: 'localhost'
+        host: '0.0.0.0', 
+        routes: {
+            cors: {
+                origin: ['*'], //Cors ok
+                credentials: true // cookie ok
+            }
+        }
     });
 
     //anslut till MongoDB 
