@@ -10,7 +10,21 @@ module.exports = [
         handler: async (request, h) => {
             return await Todo.find(); 
         }
-    }, 
+    },
+    
+    //hämta bara en todo 
+    {
+        method: "GET", 
+        path: "/todo/{id}", 
+        handler: async (request, h) => {
+            try {
+                const todo = await Todo.findById(request.params.id); 
+                return todo || h.response("Todon hittades inte").code(404)
+            } catch(err) {
+                return h.response(err).code(500)
+            } 
+        } 
+    },
 
     //skapa ny todo
     {
