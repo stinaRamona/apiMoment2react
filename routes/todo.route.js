@@ -35,7 +35,7 @@ module.exports = [
             validate: {
                 payload: Joi.object({
                     todo_title: Joi.string().min(2).required(), 
-                    todo_description: Joi.string().required(), 
+                    todo_description: Joi.string().max(200), 
                     todo_priority: Joi.number().min(1).max(5).required(),
                     todo_status: Joi.string().required(),
                 }) 
@@ -56,7 +56,7 @@ module.exports = [
             validate: {
                 payload: Joi.object({
                     todo_title: Joi.string().min(2).required(), 
-                    todo_description: Joi.string().required(), 
+                    todo_description: Joi.string().max(200), 
                     todo_priority: Joi.number().min(1).max(5).required(),
                     todo_status: Joi.string().required(),
                 }) 
