@@ -8,7 +8,6 @@ const todoSchema = new Mongoose.Schema(
         },
         todo_description: {
             type: String, 
-            required: true
         },
         todo_priority: {
             type: Number, 
